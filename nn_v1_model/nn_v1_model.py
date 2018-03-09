@@ -3,28 +3,28 @@ import numpy as np
 import pandas as pd
 import scipy.optimize as opt
 from scipy.special import erf
-from .due import due, Doi
+# from .due import due, Doi
 
-__all__ = ["Model", "Fit", "opt_err_func", "transform_data", "cumgauss"]
+__all__ = ["Model", "Fit", "opt_err_func", "transform_inputs", "cumgauss"]
 
-
+"""
 # Use duecredit (duecredit.org) to provide a citation to relevant work to
 # be cited. This does nothing, unless the user has duecredit installed,
 # And calls this with duecredit (as in `python -m duecredit script.py`):
 due.cite(Doi("10.1167/13.9.30"),
          description="Template project for small scientific Python projects",
          tags=["reference-implementation"],
-         path='shablona')
+         path='nn_v1_model')
+"""
 
-
-def transform_data(data):
+def transform_inputs(data):
     """
-    Function that takes experimental data and gives us the
-    dependent/independent variables for analysis.
+    Function that takes parameters for the simulation and transforms them to
+    inputs
 
     Parameters
     ----------
-    data : Pandas DataFrame or string.
+    data : dict or string.
         If this is a DataFrame, it should have the columns `contrast1` and
         `answer` from which the dependent and independent variables will be
         extracted. If this is a string, it should be the full path to a csv
